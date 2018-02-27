@@ -1,9 +1,15 @@
-10.times do 
+10.times do
   Item.create(
-    title: Faker::Commerce.product_name, 
-    inventory: Faker::Number.number(2), 
-    price: Faker::Number.number(4)
+    title: Faker::Commerce.product_name,
+    inventory: Faker::Number.number(2),
+    price: Faker::Number.number(4),
   )
+
+  User.create(
+    email: Faker::Internet.email,
+    password: "password",
+  )
+
   Category.create(title: Faker::Commerce.department)
 end
 
